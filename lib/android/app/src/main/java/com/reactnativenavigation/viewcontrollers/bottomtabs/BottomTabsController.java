@@ -124,6 +124,9 @@ public class BottomTabsController extends ParentController implements AHBottomNa
 
     @Override
     protected ViewController getCurrentChild() {
+        if(bottomTabs == null || bottomTabs.getItemsCount() == 0) {
+            return tabs.get(0);
+        }
         return tabs.get(bottomTabs.getCurrentItem());
     }
 
